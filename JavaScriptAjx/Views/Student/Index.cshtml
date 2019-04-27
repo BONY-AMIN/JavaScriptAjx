@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered" id="tbl">
+            <thead>
+                <tr>
+                    <td>StudentId</td>
+                    <td>StudentName</td>
+                    <td>Dept</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+
+        </table>
+    </div>
+
+    <br /><br /><br />
+    <div class="col-md-12">
+        <label class="form-inline" id="id" name="id"></label>
+        <div class="form-horizontal">
+            <label class="control-label col-md-3">StudentName</label>
+            <div class="col-md-3">
+                <input type="text" id="name" name="name" />
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+            <label class="control-label col-md-3">Dept</label>
+            <div class="col-md-3">
+                <input type="text" id="dept" name="dept" />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="btnsave" class="btn btn-primary">Save</button>
+        <input type="submit" id="btnupdate" value="update" />
+    </div>
+</div>
+
+@section script{
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+
+        $("#btnsave").click(function () {
+            var obj = {
+                StudentName: $("name").val(),
+                Dept: $("#dept").val(),
+            }
+            $.ajax({
+                url: "Student/Create",
+                type: "POST",
+                dataType: "Json",
+                data: JSON.stringify(obj),
+                data: "application/Json"
+            }).done(function (data) {
+                
+                LoadData();
+                console.log(data);
+                
+            })
+        })
+
+
+        </script>
+
+
+    }

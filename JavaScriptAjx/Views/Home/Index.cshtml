@@ -1,0 +1,119 @@
+﻿@model JavaScriptAjx.Models.Sum
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+@*<h2>JavaScript Function</h2>
+<div class="form-group">
+    <label for="us">Name:</label>
+    <input type="number" class="form-control" id="usr">
+</div>
+
+<div class="form-group">
+    <label for="ur">Name:</label>
+    <input type="number" class="form-control" id="usrrr">
+</div>*@
+
+@*<label></label>*@
+<button type="button" onclick="calculate()">Click me</button><br />
+<br />
+
+@*<p id="demo"> </p><br />*@
+
+@*<div id="demo"></div>*@
+@*Sum: <input type="text" id="demo">*@
+@Html.TextBoxFor(model => model.Firstnumber)
+@Html.TextBoxFor(model => model.Secondnumber)
+@Html.TextBoxFor(model => model.Result)
+@*sub: <input type="text" id="demo1">
+Mul: <input type="text" id="demo2">
+Div: <input type="text" id="demo3">*@
+
+@section scripts{
+
+    <script>
+       
+
+
+        //$(document).ready(function () {
+
+        //});
+
+        $('#Firstnumber').keyup(function () {
+         
+                Calculation();
+
+            });
+
+        $('#Secondnumber').keyup(function () {
+
+
+            Calculation();
+
+                //var x = $("#Firstnumber").val();
+                //var y = $("#Secondnumber").val();
+                //if (x == "") {
+                //    x = 0;
+
+                //}
+                //if (y == "") {
+                //    y = 0;
+
+                //}
+                //var z = parseFloat(x) + parseFloat(y);
+                //$("#Result").val(z.toFixed(2));
+
+            });
+
+
+
+       
+        //});
+
+
+        function Calculation() {
+        
+            var x = $("#Firstnumber").val();
+            var y = $("#Secondnumber").val();
+            if (x == "") {
+                x = 0;
+
+            }
+            if (y == "") {
+                y = 0;
+
+            }
+            var z = parseFloat(x) + parseFloat(y);
+            $("#Result").val(z.toFixed(2));
+
+        }
+
+        function calculate() {
+            var x = $("#Firstnumber").val();
+            alert(x);
+            var y = $("#Secondnumber").val();
+            alert(y);
+            var z = parseFloat(x) + parseFloat(y);
+            alert(z);
+            $("#Result").val(z.toFixed(2));
+
+            //var x = parseInt($("#usr").val());
+            //var y = parseInt($("#usrrr").val());
+            //var f = x + y;
+            //var s = x - y;
+            //var m = x * y;
+            //var d = x / y;
+            //console.log(s);
+
+            //$("#demo").val(f);
+            //$("#demo1").val(s);
+            //$("#demo2").val(m);
+            //$("#demo3").val(d.toFixed(2));
+        }
+
+    </script>
+
+}

@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Index1";
+}
+
+
+@section scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("tr:even").css("background-color", "yellow");
+            $("button").click(function () {
+                $("p").toggle(1000);
+            });
+            $("#hide").click(function () {
+                $("p").hide();
+            });
+            $("#show").click(function () {
+                $("p").show();
+            });
+
+            //$("#fade").click(function () {
+            //    $("div1").fadeToggle();
+            //    $("div2").fadeToggle("slow");
+            //    $("div3").fadeToggle(3000);
+            //});
+
+            $("p").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
+            })
+
+        });
+    </script>
+
+
+
+
+}
+
+<h2>JavaScript Can Validate Input</h2>
+
+<p id="test">If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+<p><a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a></p>
+<p><a href="https://www.w3schools.com/css/">CSS Tutorial</a></p>
+<button>Click me</button>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+
+
+<p>List 1:</p>
+<ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Tea</li>
+</ul>
+
+<p>List 2:</p>
+<ul>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Tea</li>
+</ul>
+
+<table border="1">
+    <tr>
+        <th>Company</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>Berglunds snabbköp</td>
+        <td>Sweden</td>
+    </tr>
+    <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Mexico</td>
+    </tr>
+    <tr>
+        <td>Ernst Handel</td>
+        <td>Austria</td>
+    </tr>
+    <tr>
+        <td>Island Trading</td>
+        <td>UK</td>
+    </tr>
+</table>
+
